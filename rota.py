@@ -278,7 +278,6 @@ def encontrar_melhor_rota(dist_matrix, enderecos_validos):
 arquivo_excel = "ENDERECOS-ROTA.xlsx"
 nome_coluna_enderecos = "Endereco"
 nome_coluna_nomes = "Nome"
-arquivo_saida_pdf = "melhor_rota.pdf"
 ponto_partida = "Rua Floriano Peixoto, 368, Itapuí, SP"
 
 # Solicitar a cidade ao usuário
@@ -430,6 +429,17 @@ try:
     
     # Criar título com cidade e data
     titulo = f"Rota de Entregas - {cidade} - {data_atual}"
+    # Definir o nome do arquivo PDF baseado no título, removendo acentos e substituindo espaços e barras
+    nome_arquivo = remover_acentos(titulo).replace(" ", "_").replace("/", "-")
+    
+    # Criar pasta ROTAS-GERADAS se não existir
+    pasta_rotas = "ROTAS-GERADAS"
+    if not os.path.exists(pasta_rotas):
+        os.makedirs(pasta_rotas)
+    
+    # Definir caminho completo do arquivo PDF
+    arquivo_saida_pdf = os.path.join(pasta_rotas, f"{nome_arquivo}.pdf")
+    
     pdf.cell(0, 10, titulo, ln=True, align="C")
     pdf.ln(10)
 

@@ -201,5 +201,47 @@
       -48.5345554
     ],
     "timestamp": "2025-05-15T10:20:54.746787"
+  },
+  "Rua campos salles, 314, Itapui, SP": {
+    "coords": [
+      -22.2372846,
+      -48.7188958
+    ],
+    "timestamp": "2025-05-15T10:44:20.008838"
+  },
+  "Elizeu Spuri, 8, Itapuí, SP": {
+    "coords": [
+      -22.2402076,
+      -48.7176992
+    ],
+    "timestamp": "2025-05-15T10:44:22.807370"
+  },
+  "Avenida comendador José maria de Almeida Prado, 702, Itapui, SP": {
+    "coords": [
+      -22.2368101,
+      -48.7227525
+    ],
+    "timestamp": "2025-05-15T10:44:31.916362"
+  },
+  "Francisco Artioli, 300, Itapui, SP": {
+    "coords": [
+      -22.2276629,
+      -48.7175575
+    ],
+    "timestamp": "2025-05-15T10:44:34.709319"
+  },
+  "Coronel Frederico Ferraz, 56, Itapui, SP": {
+    "coords": [
+      -22.2345555,
+      -48.7223181
+    ],
+    "timestamp": "2025-05-15T10:44:37.439344"
+  },
+  "Lourdes de souza manfrinato, 482, Itapui, SP": {
+    "coords": [
+      -22.237401,
+      -48.7337239
+    ],
+    "timestamp": "2025-05-15T10:47:57.418600"
   }
 }
