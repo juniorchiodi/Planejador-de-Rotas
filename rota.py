@@ -85,7 +85,7 @@ def geocodificar_endereco(endereco, max_tentativas=3):
     url = f"https://nominatim.openstreetmap.org/search?q={quote(endereco_formatado)}&format=json&limit=1"
     
     headers = {
-        'User-Agent': 'RotaEntregas/1.0 (https://github.com/seu-usuario/rota-entregas; seu-email@exemplo.com) Python/3.x'
+        'User-Agent': 'RotaEntregas/1.0 (https://github.com/juniorchiodi/Planejador-de-Rotas; juninho.junirj@gmail.com) Python/3.x'
     }
 
     for tentativa in range(max_tentativas):
@@ -455,41 +455,51 @@ try:
 
     # Cabeçalho da tabela
     pdf.set_font("Arial", "B", 12)
-    pdf.cell(10, 10, "Nº", 1, 0, "C")
-    pdf.cell(50, 10, "Nome", 1, 0, "C")
-    pdf.cell(70, 10, "Endereço", 1, 0, "C")
-    pdf.cell(30, 10, "Distância", 1, 0, "C")
-    pdf.cell(30, 10, "Link", 1, 1, "C")
+    pdf.set_fill_color(255, 0, 0)  # Vermelho
+    pdf.set_text_color(255, 255, 255)  # Texto branco
+    pdf.cell(10, 10, "Nº", 1, 0, "C", True)
+    pdf.cell(50, 10, "Nome", 1, 0, "C", True)
+    pdf.cell(70, 10, "Endereço", 1, 0, "C", True)
+    pdf.cell(30, 10, "Distância", 1, 0, "C", True)
+    pdf.cell(30, 10, "Link", 1, 1, "C", True)
 
     # Dados da tabela
     pdf.set_font("Arial", "", 10)
+    pdf.set_text_color(0, 0, 0)  # Texto preto
+    pdf.set_fill_color(255, 240, 240)  # Fundo vermelho claro
     for i, (nome, endereco, link, dist) in enumerate(zip(nomes_ordenados[1:], enderecos_ordenados[1:], links[1:], distancias_parciais), 1):
         # Verifica se precisa de nova página
         if pdf.get_y() > 250:
             pdf.add_page()
             # Recria o cabeçalho na nova página
             pdf.set_font("Arial", "B", 12)
-            pdf.cell(10, 10, "Nº", 1, 0, "C")
-            pdf.cell(50, 10, "Nome", 1, 0, "C")
-            pdf.cell(70, 10, "Endereço", 1, 0, "C")
-            pdf.cell(30, 10, "Distância", 1, 0, "C")
-            pdf.cell(30, 10, "Link", 1, 1, "C")
+            pdf.set_fill_color(255, 0, 0)  # Vermelho
+            pdf.set_text_color(255, 255, 255)  # Texto branco
+            pdf.cell(10, 10, "Nº", 1, 0, "C", True)
+            pdf.cell(50, 10, "Nome", 1, 0, "C", True)
+            pdf.cell(70, 10, "Endereço", 1, 0, "C", True)
+            pdf.cell(30, 10, "Distância", 1, 0, "C", True)
+            pdf.cell(30, 10, "Link", 1, 1, "C", True)
             pdf.set_font("Arial", "", 10)
+            pdf.set_text_color(0, 0, 0)  # Texto preto
+            pdf.set_fill_color(255, 240, 240)  # Fundo vermelho claro
 
         # Número
-        pdf.cell(10, 15, '#' + str(i), 1, 0, "C")
+        pdf.cell(10, 15, '#' + str(i), 1, 0, "C", True)
         
         # Nome
-        pdf.cell(50, 15, nome, 1, 0, "L")
+        pdf.cell(50, 15, nome, 1, 0, "L", True)
         
         # Endereço
-        pdf.cell(70, 15, endereco, 1, 0, "L")
+        pdf.cell(70, 15, endereco, 1, 0, "L", True)
         
         # Distância
-        pdf.cell(30, 15, f"{dist:.2f} km", 1, 0, "C")
+        pdf.cell(30, 15, f"{dist:.2f} km", 1, 0, "C", True)
         
         # Link (clicável)
-        pdf.cell(30, 15, "Ver no Maps", 1, 1, "C", link=link)
+        pdf.set_text_color(255, 0, 0)  # Texto vermelho
+        pdf.cell(30, 15, "Ver no Maps", 1, 1, "C", True, link=link)
+        pdf.set_text_color(0, 0, 0)  # Volta para texto preto
 
     # Adicionar seção de endereços com erro
     if enderecos_com_erro:
@@ -500,23 +510,31 @@ try:
 
         # Cabeçalho da tabela de erros
         pdf.set_font("Arial", "B", 12)
-        pdf.cell(20, 10, "Linha", 1, 0, "C")
-        pdf.cell(170, 10, "Endereço", 1, 1, "C")
+        pdf.set_fill_color(255, 0, 0)  # Vermelho
+        pdf.set_text_color(255, 255, 255)  # Texto branco
+        pdf.cell(20, 10, "Linha", 1, 0, "C", True)
+        pdf.cell(170, 10, "Endereço", 1, 1, "C", True)
 
         # Dados dos erros
         pdf.set_font("Arial", "", 10)
+        pdf.set_text_color(0, 0, 0)  # Texto preto
+        pdf.set_fill_color(255, 240, 240)  # Fundo vermelho claro
         for linha, endereco in enderecos_com_erro:
             # Verifica se precisa de nova página
             if pdf.get_y() > 250:
                 pdf.add_page()
                 # Recria o cabeçalho na nova página
                 pdf.set_font("Arial", "B", 12)
-                pdf.cell(20, 10, "Linha", 1, 0, "C")
-                pdf.cell(170, 10, "Endereço", 1, 1, "C")
+                pdf.set_fill_color(255, 0, 0)  # Vermelho
+                pdf.set_text_color(255, 255, 255)  # Texto branco
+                pdf.cell(20, 10, "Linha", 1, 0, "C", True)
+                pdf.cell(170, 10, "Endereço", 1, 1, "C", True)
                 pdf.set_font("Arial", "", 10)
+                pdf.set_text_color(0, 0, 0)  # Texto preto
+                pdf.set_fill_color(255, 240, 240)  # Fundo vermelho claro
 
-            pdf.cell(20, 15, str(linha), 1, 0, "C")
-            pdf.cell(170, 15, endereco, 1, 1, "L")
+            pdf.cell(20, 15, str(linha), 1, 0, "C", True)
+            pdf.cell(170, 15, endereco, 1, 1, "L", True)
 
     pdf.output(arquivo_saida_pdf)
     print_colorido(f"\n✅ PDF gerado com sucesso: {arquivo_saida_pdf}", Fore.GREEN)
