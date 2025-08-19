@@ -1,37 +1,30 @@
 {
-  "Rua Manoel José Gonçalves Fraga, 290, Jaú, SP": {
-    "coords": [
-      -22.2669071,
-      -48.5636877
-    ],
-    "timestamp": "2025-08-06T11:20:32.269006"
-  },
-  "Rua Tercilia Bernardi Cruz, 721, Jaú, SP": {
-    "coords": [
-      -22.2769546,
-      -48.5216772
-    ],
-    "timestamp": "2025-08-06T11:21:53.182277"
-  },
   "Rua Floriano Peixoto, 368, Centro, Itapuí - SP": {
     "coords": [
-      -22.2327752,
-      -48.7179296
+      -22.2327799,
+      -48.7181831
     ],
-    "timestamp": "2025-08-06T17:01:12.343717"
+    "timestamp": "2025-08-19T13:37:59.869482"
   },
-  "Rua Adercio Lucato, 385, Dois Córregos, SP": {
+  "Rafael Regina, 59, Bariri, SP": {
     "coords": [
-      -22.3890771,
-      -48.3968219
+      -22.0773715,
+      -48.7236549
     ],
-    "timestamp": "2025-08-06T17:01:16.265172"
+    "timestamp": "2025-08-19T13:38:05.602215"
   },
-  "Rua Geraldo Garcia Guilhem, 189, Igaraçu do Tietê, SP": {
+  "Domingos Della coletta, 48, Bariri, SP": {
     "coords": [
-      -22.5163743,
-      -48.5549836
+      -22.0858936,
+      -48.7494511
     ],
-    "timestamp": "2025-08-07T07:40:46.080277"
+    "timestamp": "2025-08-19T13:38:11.630421"
+  },
+  "Fernando bilancieri, 237, Boraceia sp, SP": {
+    "coords": [
+      -22.1992822,
+      -48.7867237
+    ],
+    "timestamp": "2025-08-19T13:38:17.702829"
   }
 }
